@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Small Language Models vs Large Language Models - Реферат</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar navbar-dark bg-dark sticky-top">
+        <div class="container-lg">
+            <span class="navbar-brand mb-0 h1">🤖 SLM vs LLM</span>
+        </div>
+    </nav>
+
+    <!-- Главна секция -->
+    <header class="hero-section text-white text-center py-5">
+        <div class="container-lg">
+            <h1 class="display-4 fw-bold mb-3">Small Language Models срещу Large Language Models</h1>
+            <p class="lead mb-2">Детайлен анализ на скорост, цена и възможности</p>
+        </div>
+    </header>
+
+    <!-- Основно съдържание -->
+    <main class="container-lg my-5">
+
+        <!-- 1. ВЪВЕДЕНИЕ -->
+        <section class="mb-5 fade-in">
+            <div class="section-header">
+                <h2 class="section-title">📚 Въведение</h2>
+            </div>
+            <div class="card card-content">
+                <div class="card-body">
+                    <p class="lead">Развитието на изкуствения интелект през последното десетилетие се характеризира с бърз напредък в областта на езиковите модели. Съвременните системи варират от компактни модели с милиони параметри до мащабни архитектури с десетки и стотици милиарди параметри. Тази еволюция води до значителни различия в производителността, разходите и приложимостта на различните типове модели.</p>
+                    
+                    <h4 class="mt-4 mb-3">Определения и контекст</h4>
+                    <p><strong>Големите езикови модели (Large Language Models, LLM)</strong> представляват невронни мрежи с милиарди параметри, обучени върху огромни корпуси от текстови данни. Те демонстрират висока способност за разбиране на контекст, генериране на текст и решаване на сложни задачи.</p>
+                    
+                    <p>От друга страна,<strong> малките езикови модели (Small Language Models, SLM)</strong> са оптимизирани за ефективност и работа в ограничени изчислителни среди. Те се използват успешно в специфични приложения, където ниската латентност и ниските разходи са критични.</p>
+
+                    <p>През последните години фокусът в индустрията се измества от максимален размер към оптимален баланс между ефективност, точност и разходи.</p>
+
+                    <h4 class="mt-4 mb-3">Защо този анализ е важен?</h4>
+                    <p>Избирането между SLM и LLM е критично за всяка организация, която разработва или развертава AI решения. Всеки вариант има своите предимства и недостатъци, които зависят от конкретния контекст на употреба.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. ТАБЛИЦА ЗА СЪРАВНЕНИЕ -->
+        <section class="mb-5 fade-in">
+            <div class="section-header">
+                <h2 class="section-title">📊 Основно съравнение</h2>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Характеристика</th>
+                            <th>Small Language Models</th>
+                            <th>Large Language Models</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Размер</strong></td>
+                            <td>500M - 7B параметра</td>
+                            <td>7B - 405B+ параметра</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Скорост обработка</strong></td>
+                            <td>⚡ Много бърза (< 100ms)</td>
+                            <td>🐢 По-бавна (200-500ms)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Разход на памет</strong></td>
+                            <td>1-10 GB</td>
+                            <td>40-100+ GB</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Текущи разходи</strong></td>
+                            <td>Минимални ($0.01-0.10/1M токена)</td>
+                            <td>Високи ($0.50-15/1M токена)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Развертане</strong></td>
+                            <td>На край на мрежата, локално</td>
+                            <td>Облачни серверите, GPU фарми</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Обучение</strong></td>
+                            <td>Часове до дни</td>
+                            <td>Недели до месеци</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Персонализиране</strong></td>
+                            <td>Лесно и бързо</td>
+                            <td>Трудно и скъпо</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Точност на сложни задачи</strong></td>
+                            <td>Средна до добра</td>
+                            <td>Отлична</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 3. АНАЛИЗ НА СКОРОСТТА -->
+        <section class="mb-5 fade-in">
+            <div class="section-header">
+                <h2 class="section-title">⚡ Анализ на скоростта</h2>
+            </div>
+            <div class="card card-content">
+                <div class="card-body">
+                    <h4 class="mb-4">Време на реакция при различни сценарии</h4>
+                    
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span><strong>Phi-3 (Small Model)</strong></span>
+                            <span class="badge bg-success">45ms</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" style="width: 15%"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span><strong>Mistral 7B</strong></span>
+                            <span class="badge bg-info">80ms</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" style="width: 26%"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span><strong>Llama 2 70B</strong></span>
+                            <span class="badge bg-warning">250ms</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" style="width: 83%"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span><strong>GPT-4 Turbo</strong></span>
+                            <span class="badge bg-danger">500-800ms</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-danger" style="width: 100%"></div>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <h5 class="mt-4">Детайлен анализ на производителност</h5>
+                    <p>Скоростта на езиковите модели е един от най-критичните фактори при избор на технология за реално време приложения. Small Language Models демонстрират значителен преимущества в този аспект.</p>
+                    
+                    <p><strong>Small Language Models</strong> могат да обработят заявки в 45-100 милисекунди благодарение на по-малката им архитектура и оптимизирания софтуер. Това е идеално за:</p>
+                    <ul>
+                        <li>Мобилни приложения, където задържане на батерия е критично</li>
+                        <li>Real-time chat приложения и customer support системи</li>
+                        <li>IoT устройства с ограничена процесорна мощност</li>
+                        <li>Edge computing сценарии в промишленото производство</li>
+                    </ul>
+
+                    <p><strong>Large Language Models</strong> отнемат повече време поради:</p>
+                    <ul>
+                        <li>Огромния брой параметри, което означава повече операции при обработка</li>
+                        <li>Необходимостта от мултипъл GPU потоци за паралелна обработка</li>
+                        <li>Допълнителното време за API комуникация при облачни решения</li>
+                    </ul>
+
+                    <p>За приложения, където отговорът трябва да пристигне за под 100ms (като автоматични системи за контрол), SLM са единствено практичното решение.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. ФИНАНСОВ АНАЛИЗ -->
+        <section class="mb-5 fade-in">
+            <div class="section-header">
+                <h2 class="section-title">💰 Финансов анализ на разходите</h2>
+            </div>
+            <div class="card card-content">
+                <div class="card-body">
+                    <h4 class="mb-4">Разходи за API повикания (на 1 милион токена)</h4>
+                    
+                    <table class="table table-striped">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Модел</th>
+                                <th>Входни токени</th>
+                                <th>Изходни токени</th>
+                                <th>Средна цена</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-success">
+                                <td><strong>Phi-3 Mini (Open Source)</strong></td>
+                                <td>$0</td>
+                                <td>$0</td>
+                                <td>💚 Безплатно</td>
+                            </tr>
+                            <tr class="table-success">
+                                <td><strong>Mistral 7B</strong></td>
+                                <td>$0.14</td>
+                                <td>$0.42</td>
+                                <td>~$0.28</td>
+                            </tr>
+                            <tr class="table-warning">
+                                <td><strong>GPT-3.5 Turbo</strong></td>
+                                <td>$0.50</td>
+                                <td>$1.50</td>
+                                <td>~$1.00</td>
+                            </tr>
+                            <tr class="table-danger">
+                                <td><strong>GPT-4</strong></td>
+                                <td>$3</td>
+                                <td>$6</td>
+                                <td>~$4.50</td>
+                            </tr>
+                            <tr class="table-danger">
+                                <td><strong>GPT-4 Turbo</strong></td>
+                                <td>$10</td>
+                                <td>$30</td>
+                                <td>~$20</td>
+                            </tr>
+                            <tr class="table-danger">
+                                <td><strong>Claude 3 Opus</strong></td>
+                                <td>$15</td>
+                                <td>$75</td>
+                                <td>~$45</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <hr class="my-4">
+
+                    <h5>Изчисления за реални сценарии</h5>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="alert alert-info">
+                                <h6><strong>Сценарий 1: Приложение за поддержка на клиенти</strong></h6>
+                                <p class="mb-0 small">Среднo 500 запитвания дневно, по 300 токена на запитване:</p>
+                                <hr class="my-2">
+                                <ul class="small mb-0">
+                                    <li><strong>SLM (локално):</strong> $0/месец</li>
+                                    <li><strong>SLM (облачно):</strong> ~$42/месец</li>
+                                    <li><strong>GPT-4 Turbo:</strong> ~$3,000/месец</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="alert alert-warning">
+                                <h6><strong>Сценарий 2: Голямо мащабно приложение</strong></h6>
+                                <p class="mb-0 small">50,000 запитвания дневно, по 500 токена на запитване:</p>
+                                <hr class="my-2">
+                                <ul class="small mb-0">
+                                    <li><strong>SLM (облачно):</strong> ~$4,200/месец</li>
+                                    <li><strong>LLM (облачно):</strong> ~$300,000+/месец</li>
+                                    <li><strong>Собствен сървър:</strong> ~$2,000/месец</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <h5>ROI анализ</h5>
+                    <p>За малки до средни компании, инвестирането в SLM решения може да спести огромни суми:</p>
+                    <ul>
+                        <li><strong>Първоначална инвестиция:</strong> SLM (~$10K за инфраструктура) срещу LLM ($50K+ месечно за облачни услуги)</li>
+                        <li><strong>Оперативни разходи:</strong> SLM (近скоро постоянни) срещу LLM (линейна с растежа на използването)</li>
+                        <li><strong>Окупаемост:</strong> 3-6 месеца за SLM в сравнение с непрекъснатите разходи за LLM</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. ВЪЗМОЖНОСТИ И ПРОИЗВОДИТЕЛНОСТ -->
+        <section class="mb-5 fade-in">
+            <div class="section-header">
+                <h2 class="section-title">🎯 Възможности и производителност</h2>
+            </div>
+            <div class="card card-content">
+                <div class="card-body">
+                    <h4 class="mb-4">Способности на различни типове модели</h4>
+
+                    <h5 class="mt-4 mb-3">Генериране на текст</h5>
+                    <div class="mb-3">
+                        <p class="small text-muted">Small Language Models</p>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" style="width: 75%"></div>
+                        </div>
+                        <small>Добро качество за стандартни задачи</small>
+                    </div>
+                    <div class="mb-4">
+                        <p class="small text-muted">Large Language Models</p>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" style="width: 95%"></div>
+                        </div>
+                        <small>Отлично качество, творчески способности</small>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Разбиране на контекст</h5>
+                    <div class="mb-3">
+                        <p class="small text-muted">Small Language Models</p>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" style="width: 60%"></div>
+                        </div>
+                        <small>Справя се със средни по сложност текстове</small>
+                    </div>
+                    <div class="mb-4">
+                        <p class="small text-muted">Large Language Models</p>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" style="width: 98%"></div>
+                        </div>
+                        <small>Дълги документи, съложни разсъждения</small>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Логическо разсъждение</h5>
+                    <div class="mb-3">
+                        <p class="small text-muted">Small Language Models</p>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" style="width: 50%"></div>
+                        </div>
+                        <small>Основни логически операции</small>
+                    </div>
+                    <div class="mb-4">
+                        <p class="small text-muted">Large Language Models</p>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" style="width: 90%"></div>
+                        </div>
+                        <small>Комплексни мултистепенни разсъждения</small>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Многоезично разбиране</h5>
+                    <div class="mb-3">
+                        <p class="small text-muted">Small Language Models</p>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" style="width: 55%"></div>
+                        </div>
+                        <small>Основни езици, може да липсва поддъ��жка за редки</small>
+                    </div>
+                    <div class="mb-4">
+                        <p class="small text-muted">Large Language Models</p>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" style="width: 92%"></div>
+                        </div>
+                        <small>100+ езици, включително редки</small>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <h5>Детайлен анализ на способностите</h5>
+
+                    <h6 class="mt-4">Small Language Models - Силни страни:</h6>
+                    <ul>
+                        <li><strong>Обучение:</strong> Могат да бъдат обучени или преочаровани на специфични данни в дни вместо месеци</li>
+                        <li><strong>Специализиран домейн:</strong> Отлични когато са фокусирани към конкретна индустрия или задача</li>
+                        <li><strong>Контролиран вход/изход:</strong> По-предсказуеми и по-лесни за дебъгване</li>
+                        <li><strong>Конфиденциалност:</strong> Могат да работят локално без облачни комуникации</li>
+                        <li><strong>Латентност:</strong> Идеално за real-time приложения</li>
+                    </ul>
+
+                    <h6 class="mt-4">Small Language Models - Слабости:</h6>
+                    <ul>
+                        <li>По-ограничени в разбирането на нюансирани или противоречиви инструкции</li>
+                        <li>Трудно справяне със задачи, които изискват обширно фоново знание</li>
+                        <li>По-малко способни при "zero-shot" или "few-shot" обучението</li>
+                        <li>Могат да "халюцинира" информация по-лесно от LLM</li>
+                    </ul>
+
+                    <h6 class="mt-4">Large Language Models - Силни страни:</h6>
+                    <ul>
+                        <li><strong>Обобщаване:</strong> Могат да разбередят и обобщят сложни концепции</li>
+                        <li><strong>Few-shot обучение:</strong> Научават от малко примери в контекста</li>
+                        <li><strong>Творчество:</strong> Генерират оригинални, креативни съдържание</li>
+                        <li><strong>Многозадачност:</strong> Отличиотлично се справят с различни типове задачи</li>
+                        <li><strong>Дълги контексти:</strong> Могат да анализират документи с хиляди токена</li>
+                    </ul>
+
+                    <h6 class="mt-4">Large Language Models - Слабости:</h6>
+                    <ul>
+                        <li>Висока цена на обработка</li>
+                        <li>Високи разходи за обучение и преочарване</li>
+                        <li>Бавна обработка, неподходяща за real-time приложения</li>
+                        <li>Нуждае се от облачна инфраструктура</li>
+                        <li>Проблеми със защита на данни при облачно обработване</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. ПРАКТИЧЕСКИ ПРИЛОЖЕНИЯ -->
+        <section class="mb-5 fade-in">
+            <div class="section-header">
+                <h2 class="section-title">💡 Практически приложения</h2>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 card-content">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">Small Language Models - Идеални за:</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-3">
+                                    <h6>🔒 Мобилни приложения</h6>
+                                    <p class="small text-muted">Спелчекъери, автоматично попълване, местни чат асистенти</p>
+                                </li>
+                                <li class="mb-3">
+                                    <h6>🏭 Промишлени системи</h6>
+                                    <p class="small text-muted">IoT устройства, машинне контрол, edge computing</p>
+                                </li>
+                                <li class="mb-3">
+                                    <h6>🛒 E-commerce</h6>
+                                    <p class="small text-muted">Препоръки за продукти, обработка на заявки, персонализирани съобщения</p>
+                                </li>
+                                <li class="mb-3">
+                                    <h6>📱 Специализирани чатботи</h6>
+                                    <p class="small text-muted">Подържка на определена индустрия, технически консултация</p>
+                                </li>
+                                <li class="mb-3">
+                                    <h6>🔍 Локална обработка на данни</h6>
+                                    <p class="small text-muted">Класификация, токенизиране, анализ на чувства</p>
+                                </li>
+                                <li>
+                                    <h6>💻 Вграждане в приложения</h6>
+                                    <p class="small text-muted">Вътрешни помощници, интелигентни форми</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100 card-content">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">Large Language Models - Идеални за:</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-3">
+                                    <h6>📝 Генериране на съдържание</h6>
+                                    <p class="small text-muted">Статии, есета, творчески писания, маркетингово съдържание</p>
+                                </li>
+                                <li class="mb-3">
+                                    <h6>🔍 Анализ на документи</h6>
+                                    <p class="small text-muted">Обобщаване, екстракция на информация, семантичен анализ</p>
+                                </li>
+                                <li class="mb-3">
+                                    <h6>💬 Общ назначение чатботи</h6>
+                                    <p class="small text-muted">ChatGPT, асистенти, консултации по различни теми</p>
+                                </li>
+                                <li class="mb-3">
+                                    <h6>🧠 Сложни разсъждения</h6>
+                                    <p class="small text-muted">Математика, логика, философски дебати, анализ</p>
+                                </li>
+                                <li class="mb-3">
+                                    <h6>🌍 Многоезично разбиране</h6>
+                                    <p class="small text-muted">Превод, кроскултурна комуникация, редки езици</p>
+                                </li>
+                                <li>
+                                    <h6>🎨 Креативна работа</h6>
+                                    <p class="small text-muted">Сценарии, музика, концептуално развитие</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-content mt-4">
+                <div class="card-header">
+                    <h5 class="mb-0">Реални примери на внедрение</h5>
+                </div>
+                <div class="card-body">
+                    <h6 class="mt-4">Пример 1: Компания за доставка</h6>
+                    <p><strong>Проблем:</strong> Обработка на 10,000 дневни заявки от клиенти на мобилни приложения с минимална латентност.</p>
+                    <p><strong>Решение:</strong> Развертане на SLM локално на всеки клиентски телефон. Модел Phi-3 Mini処理 заявки за под 50ms, без облачна комуникация.</p>
+                    <p><strong>Резултат:</strong> Щестянене на 90% от облачните разходи, мигновена реакция на интерфейса, конфиденциалност на данните.</p>
+
+                    <h6 class="mt-4">Пример 2: Корпоративен AI асистент</h6>
+                    <p><strong>Проблем:</strong> Компанията трябва интернен асистент за отговаряне на въпроси от служителите по политики, процедури и бизнес документи.</p>
+                    <p><strong>Решение:</strong> Fine-tune на SLM с 50,000 вътрешни документа. Deployment на частния облак с собствена инфраструктура.</p>
+                    <p><strong>Резултат:</strong> Предсказуем отговор, контролирана безопасност, адаптиран на специфичния домейн на компанията.</p>
+
+                    <h6 class="mt-4">Пример 3: Глобална маркетингова кампания</h6>
+                    <p><strong>Проблем:</strong> Създаване на маркетингово съдържание на 30+ езика с висока креативност и отговорност на бранда.</p>
+                    <p><strong>Решение:</strong> GPT-4 Turbo за генериране на первична версия, след това преводи и адаптация на местни екипи.</p>
+                    <p><strong>Резултат:</strong> Време за кампания намалено от 6 седмици на 2 седмици, висока креативност, международна съответствие.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. КОНКРЕТЕН АНАЛИЗ НА МОДЕЛИТЕ -->
+        <section class="mb-5 fade-in">
+            <div class="section-header">
+                <h2 class="section-title">🔬 Конкретни модели</h2>
+            </div>
+            <div class="card card-content">
+                <div class="card-body">
+                    <h4 class="mb-4">Популярни Small Language Models</h4>
+
+                    <h6 class="mt-4"><strong>Microsoft Phi-3 Series</strong></h6>
+                    <p>Microsoft издаде серия од малки модели (3.8B, 7B, 14B варианти), които демонстрирани отлична производителност спрямо своя размер. Phi-3 получава висока оценка при тестване на логика, математика и кодиране. Може да работи на мобилни устройства и edge сървъци.</p>
+
+                    <h6 class="mt-4"><strong>Meta Llama 2</strong></h6>
+                    <p>Llama 2 е отворен källkodе модел с размер от 7B до 70B параметра. 7B версията е отличен баланс между производителност и ефективност. Много организации го използват за локални развертания благодарение на отворената лицензия.</p>
+
+                    <h6 class="mt-4"><strong>Mistral 7B</strong></h6>
+                    <p>Mistral 7B е един от най-мощните SLM, които се състезават с Llama 2 70B при някои тестове. Известен е с отлично балансиране на скорост и точност. Идеален за production приложения, които нуждаят качество близо до LLM стойности.</p>
+
+                    <h6 class="mt-4"><strong>Google DistilBERT</strong></h6>
+                    <p>DistilBERT е малка, дистилирана версия на BERT, която запазва 95% от BERT способностите с 40% по-малък размер и 60% по-бързо. Отличен за класификация на текст, анализ на чувства и други BERT-базирани задачи.</p>
+
+                    <hr class="my-4">
+
+                    <h4 class="mb-4">Популярни Large Language Models</h4>
+
+                    <h6 class="mt-4"><strong>OpenAI GPT-4 Turbo</strong></h6>
+                    <p>GPT-4 Turbo е един от най-мощните публично налични модели. Справя се отлично с дълги контексти (128K токена), сложни разсъждения и творческа работа. Цената е 20x по-висока от дешевите алтернативи, но качеството оправдава разходите за критични приложения.</p>
+
+                    <h6 class="mt-4"><strong>Google Gemini Ultra</strong></h6>
+                    <p>Gemini Ultra е мултимодален модел, способен да обработва текст, изображение и видео. В някои тестове надминава GPT-4 в математика и логика. Достъпен чрез Google Cloud с конкурентни цени.</p>
+
+                    <h6 class="mt-4"><strong>Anthropic Claude 3</strong></h6>
+                    <p>Claude 3 е семейство модели включвайки Claude 3 Sonnet (балансиран), Claude 3 Opus (най-мощен) и Claude 3 Haiku (бърз). Познат за отлична безопасност, точност и отговорност. Често избиран за чувствителни корпоративни приложения.</p>
+
+                    <h6 class="mt-4"><strong>Meta Llama 2 70B</strong></h6>
+                    <p>Llama 2 70B е най-мощната отворена версия, конкурира се с затворени модели. Многто организации го хостват на собствени облачни инфраструктури. Баланс между отвореност и производителност.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. ПРЕСПЕКТИВИ И ТЕНДЕНЦИИ -->
+        <section class="mb-5 fade-in">
+            <div class="section-header">
+                <h2 class="section-title">🔮 Бъдещи тенденции</h2>
+            </div>
+            <div class="card card-content">
+                <div class="card-body">
+                    <h4 class="mb-4">Еволюция на индустрията</h4>
+
+                    <h5 class="mt-4">През 2024-2026</h5>
+                    <ul>
+                        <li><strong>Продължаващо намаляване на SLM:</strong> Дистилирането на знания от LLM в по-малки модели ще продължи да напредва. Очаква се SLM да достигнат качество, което е 85-90% от LLM с 1/100 от разходите.</li>
+                        <li><strong>Edge deployment:</strong> Повече модели ще бъдат оптимизирани за работа на периферни устройства - телефони, часовници, IoT сензори.</li>
+                        <li><strong>Отворени модели:</strong> Тенденцията към отворен код ще продължи с улучшена производителност на публично налични модели.</li>
+                        <li><strong>Специализирани модели:</strong> Наместо универсални LLM, компаниите ще инвестират в SLM обучени на специфични домейни - медицина, право, финанси.</li>
+                        <li><strong>Мултимодалност:</strong> Най-новите SLM поддържат текст, изображение и аудио, което отваря нови възможности.</li>
+                    </ul>
+
+                    <h5 class="mt-4">Икономически прогнози</h5>
+                    <ul>
+                        <li><strong>Намаляване на облачни разходи за AI:</strong> Тъй като повече работа се премества на edge, облачните разходи за LLM услуги ще се стабилизират.</li>
+                        <li><strong>Възход на AI инфраструктурни компании:</strong> Компании, които дават инструменти за обучение и развертане на SLM, ще станат критични.</li>
+                        <li><strong>ROI за собствени SLM:</strong> Инвестициите в разработка на собствени SLM ще дат по-добър ROI от облачните услуги.</li>
+                    </ul>
+
+                    <h5 class="mt-4">Техни предизвикателства</h5>
+                    <ul>
+                        <li><strong>Халюцинации:</strong> Както SLM, така и LLM имат проблеми с генериране на невярна информация. Това ще остане предизвикателство.</li>
+                        <li><strong>Енергопотребление:</strong> Обучението на огромни LLM все още е енергоинтензивно. Нужни са нови алгоритми за повече ефективност.</li>
+                        <li><strong>Регулативни препятствия:</strong> Все повече регулации около AI, конфиденциалност на данните и биас ще влияят на развитието.</li>
+                        <li><strong>Качество на данните:</strong> Тъй като вече съществуват огромни модели обучени на интернетни данни, новите модели се обучават на по-малко и по-биаширани данни.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. ЗАКЛЮЧЕНИЕ -->
+        <section class="mb-5 fade-in">
+            <div class="section-header">
+                <h2 class="section-title">✅ Заключение</h2>
+            </div>
+            <div class="card card-content">
+                <div class="card-body">
+                    <h4 class="mb-3">Ключови открития</h4>
+                    <p class="lead">Избирането между Small Language Models и Large Language Models не е въпрос на "кой е по-добър", а на "кой е подходящ за конкретния проблем".</p>
+
+                    <h5 class="mt-4">Резюме на сравнението</h5>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="alert alert-primary">
+                                <h6><strong>Small Language Models</strong></h6>
+                                <ul class="mb-0 small">
+                                    <li>✅ Бързи (45-100ms)</li>
+                                    <li>✅ Евтини ($0.01-0.28 за 1M токена)</li>
+                                    <li>✅ Локално развертане</li>
+                                    <li>✅ Лесни за преочарване</li>
+                                    <li>❌ По-ограничени способности</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="alert alert-success">
+                                <h6><strong>Large Language Models</strong></h6>
+                                <ul class="mb-0 small">
+                                    <li>✅ Отлична точност</li>
+                                    <li>✅ Комплексни разсъждения</li>
+                                    <li>✅ Дълги контексти</li>
+                                    <li>✅ Много еластични</li>
+                                    <li>❌ Скъпи и бавни</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h5 class="mt-4">Препоръки за различни организации</h5>
+
+                    <p><strong>За стартапи и малки компании:</strong> Фокусирайте се на SLM. Те позволяват да контролирате разходите, да развертате локално и да избегнете облачната хипотека. Open-source модели като Mistral 7B и Llama 2 са отличен избор.</p>
+
+                    <p><strong>За средни предприятия:</strong> Комбинирайте подходи. Използвайте SLM за типични задачи, а LLM за специални случаи. Това оптимизира разходите и производителността.</p>
+
+                    <p><strong>За големи корпорации:</strong> Инвестирайте в собствени SLM обучени на вътрешни данни, както и имайте достъп до LLM за специални задачи. Собственията модели дават конкурентно предимство.</p>
+
+                    <h5 class="mt-4">Финална мисъл</h5>
+                    <p>Бъдещето на AI не е нито само в огромни централизирани LLM, нито само в малких локални SLM. То е в <strong>хибридния подход</strong> - използване на най-подходящия инструмент за всяка работа. Компаниите, които успеят да интегрирата и SLM, и LLM с мъдрост, ще получат най-добрия ROI от своите AI инвестиции.</p>
+
+                    <p>SLM представляват нова ера на демократизирания AI - технология, която всеки може да разберда и развърта, независимо от бюджета. Тази ера е полезна и за разработчиците, и за крайния потребител.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. ИЗТОЧНИЦИ -->
+        <section class="mb-5 fade-in">
+            <div class="section-header">
+                <h2 class="section-title">📚 През</h2>
+            </div>
+            <div class="card card-content">
+                <div class="card-body">
+                    <p class="text-muted mb-4">Информацията в този реферат е събрана от следните авторитетни източники:</p>
+                    
+                    <ol class="sources-list">
+                        <li>
+                            <strong>OpenAI GPT Models Documentation</strong>
+                            <br>
+                            <small><a href="https://platform.openai.com/docs/guides/gpt" target="_blank" class="text-decoration-none">https://platform.openai.com/docs/guides/gpt</a></small>
+                            <br>
+                            <span class="text-muted small">Официална документация на GPT моделите, цени, и характеристики</span>
+                        </li>
+
+                        <li class="mt-3">
+                            <strong>Microsoft Phi-3 Research Paper & Docs</strong>
+                            <br>
+                            <small><a href="https://www.microsoft.com/en-us/research/blog/phi-3-redefining-whats-possible-with-slms/" target="_blank" class="text-decoration-none">https://www.microsoft.com/en-us/research/blog/phi-3-redefining-whats-possible-with-slms/</a></small>
+                            <br>
+                            <span class="text-muted small">Детайлен преглед на Phi-3 семейство модели и техните производителностни характеристики</span>
+                        </li>
+
+                        <li class="mt-3">
+                            <strong>Meta Llama 2 Announcement & Paper</strong>
+                            <br>
+                            <small><a href="https://ai.meta.com/research/publications/llama-2-open-foundation-and-fine-tuned-chat-models/" target="_blank" class="text-decoration-none">https://ai.meta.com/research/publications/llama-2-open-foundation-and-fine-tuned-chat-models/</a></small>
+                            <br>
+                            <span class="text-muted small">Официалната публикация на Llama 2 модели и сравнение с други LLM</span>
+                        </li>
+
+                        <li class="mt-3">
+                            <strong>Mistral AI Official Blog</strong>
+                            <br>
+                            <small><a href="https://mistral.ai/" target="_blank" class="text-decoration-none">https://mistral.ai/</a></small>
+                            <br>
+                            <span class="text-muted small">Информация за Mistral 7B и другите SLM модели от французкия AI стартап</span>
+                        </li>
+
+                        <li class="mt-3">
+                            <strong>Anthropic Claude Documentation</strong>
+                            <br>
+                            <small><a href="https://www.anthropic.com/claude" target="_blank" class="text-decoration-none">https://www.anthropic.com/claude</a></small>
+                            <br>
+                            <span class="text-muted small">Документация на Claude 3 LLM, включително цени и производителност</span>
+                        </li>
+
+                        <li class="mt-3">
+                            <strong>DeepSeek Research Publications</strong>
+                            <br>
+                            <small><a href="https://www.deepseek.com/" target="_blank" class="text-decoration-none">https://www.deepseek.com/</a></small>
+                            <br>
+                            <span class="text-muted small">Изследвания и публикации за оптимизирани езикови модели и техния дизайн</span>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Разстояние на дъно -->
+        <div style="height: 50px;"></div>
+
+    </main>
+
+    <!-- Подвал -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-2"><small>Реферат: Small Language Models vs Large Language Models: Скорост, цена и възможности</small></p>
+            <p class="mb-0"><small>Създан: 2026 | Използвана технология: HTML5, Bootstrap 5, CSS3</small></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
